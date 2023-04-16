@@ -12,10 +12,13 @@ const messageRoutes = require("./routes/messageRoutes");
 dotenv.config();
 connectDB();
 const app = express(); // Tạo đối tượng express và gán cho biến app
+const cors = require("cors");
 
 app.use(express.json()) // Chấp nhận dữ liệu JSON
+app.use(cors());
 
 app.get('/', (req, res) => {
+    res.setHeader("Access-Control-Allow-Credentials","true");
     res.send("API is running"); // Phản hồi từ server về client
 })
 
