@@ -15,7 +15,7 @@ const sendMessage = asyncHandler(async (req, res) => {
     // Tạo đối tương message
     var newMessage = {
         sender: req.user._id,
-        content, content,
+        content: content,
         chat: chatId,
     }
 
